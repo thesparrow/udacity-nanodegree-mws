@@ -12,11 +12,15 @@ All dependencies are found in package.json. Gulp runner is our task manager for 
 ## Project Requirements
 * Use server data instead of local memory.
 * Use IndexedDB to cache JSON responses.
-
-Minimum performance requirements.
-Performance: 70 or better.
-Progressive Web App: 90 or better.
-Accessibility: 90 or better.
+* Minimum performance requirements using [Lighthouse](https://developers.google.com/web/tools/lighthouse/) benchmarks for Progressive Web Apps.
+  > Performance: 70 or better
+  > Progressive Web App: 90 or better
+  > Accessibility: 90 or better
+  
+  My app's scores: 
+  > Performance: 95
+  > Progressive Web App: 90 or better
+  > Accessibility: 98 
 
 ## Official Styleguide
 
@@ -67,5 +71,5 @@ gulp serve-dist
 Follow the awesome [Udacity Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)!
 
 ## Author
-Follow me and my work! Appreciate any feedback as I am always growing as a developer.
-**[thesparrow](https://github.com/thesparrow/)**
+Follow me**[thesparrow](https://github.com/thesparrow/)** and my work! Appreciate any feedback as I am always growing as a developer.
+
