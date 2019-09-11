@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Reviews</title>
+
+  <meta name="description" content="Restaurant Reviews - Review your favorite restaurant">
+  <meta name="keywords" content="restaurant, reviews, progressive web app, image responsive">
+
+  <!--Mobile Web Friendly-->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!--Mobile Theme Header-->
+  <meta name="theme-color" content="#f3f3f3">
+  
+  <!--FAVICON-->
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!--CUSTOM STYLE-->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container">
+        <section id="map-container" aria-labelledby="map-aria-description" role="application">
+      <div id="map"></div>
+    </section>
+    <label id="map-aria-description" class="map-aria-description">Google map application</label>
+    <section>
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="neighborhoods-label">
+          <option value="all">All Neighborhoods</option>
+        </select>
+
+        <label id="neighborhoods-label" class="filter-label">by neighborhoods</label> 
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="cuisines-label">
+          <option value="all">All Cuisines</option>
+        </select>
+        <label id="cuisines-label" class="filter-label">by cuisines</label>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+
+  <footer id="footer">
+    Copyright (c) 2018 
+    <a href="/">
+      <span>
+          <strong id="company-name">Restaurant Reviews</strong>        
+      </span>
+    </a>
+       All Rights Reserved.
+  </footer>
+
+<!-- Beginning scripts -->
+<script>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+      .then(function(registration) {
+            console.log('Service Worker Registered');
+      });
+
+    navigator.serviceWorker.ready.then(function(registration) {
+       console.log('Service Worker Ready');
+    });
+  }
+  </script>
+
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
+
+  <!-- End scripts -->
+
+</body>
+
+</html>
