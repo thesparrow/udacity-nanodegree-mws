@@ -13,14 +13,14 @@ All dependencies are found in package.json. Gulp runner is our task manager for 
 * Use server data instead of local memory.
 * Use IndexedDB to cache JSON responses.
 * Minimum performance requirements using [Lighthouse](https://developers.google.com/web/tools/lighthouse/) benchmarks for Progressive Web Apps.
-  > Performance: 70 or better
-  > Progressive Web App: 90 or better
-  > Accessibility: 90 or better
+  > * Performance: 70 or better
+  > * Progressive Web App: 90 or better
+  > * Accessibility: 90 or better
   
   My app's scores: 
-  > Performance: 95
-  > Progressive Web App: 90 or better
-  > Accessibility: 98 
+  > * Performance: 95
+  > * Progressive Web App: 90 or better
+  > * Accessibility: 98 
 
 ## Official Styleguide
 
