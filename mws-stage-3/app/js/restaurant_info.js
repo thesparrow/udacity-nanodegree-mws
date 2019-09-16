@@ -161,12 +161,14 @@ createReviewHTML = review => {
     reviewHeader.appendChild(name);
 
     const date = document.createElement("p");
-    date.innerHTML = review.date;
+    date.className = "review-date";
+    const dateString = new Date(review.createdAt);
+    date.innerHTML = dateString.toDateString();
     reviewHeader.appendChild(date);
     li.appendChild(reviewHeader);
 
     const rating = document.createElement("p");
-    rating.innerHTML = `Rating: ${review.rating}`;
+    rating.innerHTML = `Rating: ${review.rating}/5`;
     li.appendChild(rating);
 
     const comments = document.createElement("p");
