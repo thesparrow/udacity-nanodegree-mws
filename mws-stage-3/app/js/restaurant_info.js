@@ -127,11 +127,8 @@ fillRestaurantHoursHTML = (
  * Create all reviews HTML and add them to the webpage.
  */
 fillReviewsHTML = (error, reviews = self.restaurant.reviews) => {
-    
-  if (error) {
-    console.log('Error retrieving reviews', error);
-  }
 
+    //console.log(reviews);
     const container = document.getElementById("reviews-container");
     const title = document.getElementById("reviews-title");
     title.innerHTML = "Reviews";
