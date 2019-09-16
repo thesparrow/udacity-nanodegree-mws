@@ -201,7 +201,7 @@ class DBHelper {
     * Get the restaurant by review
     */
     static fetchRestaurantReviewsById(id, callback) {
-        fetch(DBHelper.DATABASE_URL + `/reviews/?restaurant_id=${id}`)
+        fetch(DBHelper.RESTAURANT_REVIEW_URL + `${id}`)
             .then(response => response.json())      
             .then(data => callback(null, data))
             .catch(err => callback(err, null));
