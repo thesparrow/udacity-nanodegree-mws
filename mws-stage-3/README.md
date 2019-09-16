@@ -1,4 +1,4 @@
-# MWS Stage 2 - Dynamic & Offline Capable Web Apps
+# MWS Stage 3 - Dynamic & Offline Capable Web Apps
 
 ## Goal of the Project
 
