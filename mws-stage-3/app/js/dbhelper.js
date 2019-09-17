@@ -200,12 +200,28 @@ class DBHelper {
     /**
     * Get the restaurant by review
     */
-    static fetchRestaurantReviewsById(id, callback) {
+    
+    /*static fetchRestaurantReviewsById(id, callback) {
         fetch(DBHelper.RESTAURANT_REVIEW_URL + `${id}`)
             .then(response => response.json())      
             .then(data => callback(null, data))
             .catch(err => callback(err, null));
-    }
+    }*/
+    
+     static fetchRestaurantReviewsById(id, callback) {
+    // Fetch all reviews for the specific restaurant
+    const fetchURL = DBHelper.RESTAURANT_REVIEW_URL + id;
+    fetch(fetchURL, {method: "GET"}).then(response => {
+      if (!response.clone().ok && !response.clone().redirected) {
+        throw "No reviews available";
+      }
+      response
+        .json()
+        .then(result => {
+          callback(null, result);
+        })
+    }).catch(error => callback(error, null));
+  }
 
     /**
      * Map marker for a restaurant.

@@ -95,8 +95,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
         fillRestaurantHoursHTML();
     }
     // fill reviews
-    DBHelper.fetchRestaurantReviewsById(restaurant.id, fillReviewsHTML);
-    fillReviewsHTML();
+    DBHelper.fetchRestaurantReviewsById(restaurant.id, fillReviewsHTML)
 
 };
 
@@ -126,9 +125,16 @@ fillRestaurantHoursHTML = (
 /**
  * Create all reviews HTML and add them to the webpage.
  */
-fillReviewsHTML = (error, reviews = self.restaurant.reviews) => {
+const fillReviewsHTML = (error, reviews) => {
 
-    //console.log(reviews);
+    self.restaurant.reviews = reviews;
+
+
+    console.log(reviews);
+
+    if (error) {
+        console.log("Error in getting reviews @", error);
+    }
     const container = document.getElementById("reviews-container");
     const title = document.getElementById("reviews-title");
     title.innerHTML = "Reviews";
@@ -150,7 +156,7 @@ fillReviewsHTML = (error, reviews = self.restaurant.reviews) => {
 /**
  * Create review HTML and add it to the webpage.
  */
-createReviewHTML = review => {
+const createReviewHTML = review => {
     const li = document.createElement("li");
 
     const reviewHeader = document.createElement("div");
