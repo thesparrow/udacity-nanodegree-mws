@@ -74,6 +74,25 @@
             </div>
         </section>
         <!-- end restaurant -->
+
+        <!-- Beginning review form -->
+
+        <section id="write-review-container">
+            <h3>Write a review</h3>
+            <form id="review-form" method="POST">
+                <span class="input-group">
+                <input type="text" id="reviewer-name" name="name" placeholder="Your full name" required>
+                <input type="number" id="rating" name="rating" placeholder="Rating (1-5)" min="1" max="5"
+                required>
+                </span>
+                <textarea rows="4" id="restaurant-review" name="review" placeholder="Write what you experienced at the restaurant. Could be the food, ambience or the service. Would you recommend this place to others?" required></textarea>
+                <div id="submit-div">
+                    <input id="review-submit" type="submit" value="Submit" aria-label="Submit review" tabindex="0" />
+                </div>
+            </form>
+        </section>
+        <!-- End review form -->
+
         <!-- Beginning reviews -->
         <section id="reviews-container" role="region" tabindex="0" aria-label="Reviews of restaurants">
             <h3 id="reviews-title" role="heading" tabindex="0" aria-label="Review Title"></h3>

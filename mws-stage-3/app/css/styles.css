@@ -396,12 +396,51 @@ nav h1 a {
     width: 100%;
 }
 
+#write-review-container h3,
 #reviews-container h3 {
     color: #804200;
     font-size: 24pt;
     font-weight: 300;
     letter-spacing: -1px;
-    margin: 4% 0 0 0;
+    margin: 2% 0 0 0;
+    align-self: center;
+}
+
+#write-review-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+
+#review-form * {
+  margin: 1%;
+  padding: 0.5%;
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background-color: #252831;
+  color: #fff;
+}
+
+#review-form .input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+#review-form textarea {
+    resize: none;
 }
 
 #reviews-list {
