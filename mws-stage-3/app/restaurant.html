@@ -75,23 +75,32 @@
         </section>
         <!-- end restaurant -->
 
-        <!-- Beginning review form -->
-
-        <section id="write-review-container">
+        <!-- Beginning review section -->
+        <section id="write-review-container" role="region" tabindex="0">
             <h3>Write a review</h3>
-            <form id="review-form" method="POST">
+            <!--Beginning form--> 
+            <form id="review-form" role="form" aria-lable="Submit review" method="POST">
                 <span class="input-group">
-                <input type="text" id="reviewer-name" name="name" placeholder="Your full name" required>
-                <input type="number" id="rating" name="rating" placeholder="Rating (1-5)" min="1" max="5"
+                <input type="text" id="reviewer-name" name="name" placeholder="Your full name" aria-label="Your Name "required>
+                <input type="number" id="rating" name="rating" placeholder="Rating (1-5)" min="1" max="5" aria-label="Your review rating from 1 to 5"
                 required>
+                <!--<select id="review-rating" name="rating" tabindex="0" aria-label="Rating select out of 5">
+                    <option value="1" tabindex="0">1</option>
+                    <option value="2" tabindex="0">2</option>
+                    <option value="3" tabindex="0">3</option>
+                    <option value="4" tabindex="0">4</option>
+                    <option value="5" tabindex="0">5</option>
+                </select>-->
+                
                 </span>
-                <textarea rows="4" id="restaurant-review" name="review" placeholder="Write what you experienced at the restaurant. Could be the food, ambience or the service. Would you recommend this place to others?" required></textarea>
+                <textarea rows="4" id="restaurant-review" name="review" placeholder="Write what you experienced at the restaurant. Could be the food, ambience or the service. Would you recommend this place to others?"  aria-label="Your review" required></textarea>
                 <div id="submit-div">
-                    <input id="review-submit" type="submit" value="Submit" aria-label="Submit review" tabindex="0" />
+                    <input id="review-submit" type="submit" value="Submit" aria-label="submit review" tabindex="0" />
                 </div>
             </form>
+            <!-- Ending form-->
         </section>
-        <!-- End review form -->
+        <!-- End review section -->
 
         <!-- Beginning reviews -->
         <section id="reviews-container" role="region" tabindex="0" aria-label="Reviews of restaurants">
