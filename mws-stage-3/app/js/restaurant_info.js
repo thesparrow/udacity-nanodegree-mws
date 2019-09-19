@@ -204,3 +204,36 @@ getParameterByName = (name, url) => {
     if (!results[2]) return "";
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
+
+
+
+initReviewForm = () => {
+  let reviewForm = document.getElementById("review-form");
+  reviewForm.onsubmit = event => {
+    event.preventDefault();
+    let review = {
+      restaurant_id: self.restaurant.id,
+      name: event.target.name.value,
+      rating: event.target.rating.value,
+      comments: event.target.review.value
+    };
+
+    if (navigator.onLine) {
+      DBHelper.postReview(review)
+        .then(() => addNewReview(review))
+        .then(() => reviewForm.reset())
+        .catch(error => {
+          console.log("error posting review", review);
+          DBHelper.saveOfflineReview(review).then(() => {
+            addNewReview(review);
+            reviewForm.reset();
+          });
+        });
+    } /*else {
+      DBHelper.saveOfflineReview(review).then(() => {
+        addNewReview(review);
+        reviewForm.reset();
+      });
+    }*/
+  };
+};
